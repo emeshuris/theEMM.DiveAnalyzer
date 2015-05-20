@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>JBChart.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>2B22D0371B0AF981006856F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B22D0501B0C5156006856F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2B22D05A1B0C5156006856F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

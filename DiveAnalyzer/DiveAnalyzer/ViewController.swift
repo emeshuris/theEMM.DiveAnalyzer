@@ -1,5 +1,6 @@
 import UIKit
 import Foundation // for NSJSONSerialization
+import JBChart
 
 class Dive {
     var DiveIdentifier: String!
@@ -30,16 +31,24 @@ class DivePoint {
     }
 }
 
-class ViewController: UIViewController {
-    @IBOutlet var diveLabel: UILabel!
-    @IBOutlet var startDateLabel: UILabel!
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var pressureLabel: UILabel!
-    @IBOutlet var depthLabel: UILabel!
-    
+class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
+    @IBOutlet weak var barChart: JBBarChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.darkGrayColor()
+        barChart.backgroundColor = UIColor.darkGrayColor()
+        
+        barChart.delegate = self
+        barChart.dataSource = self
+        barChart.minimumValue = 0
+        barChart.maximumValue = 4000
+        
+        
+        
+        
+        
         
         var diveEndpoint: String = "http://edwardmeshuf842/DiveAnalyzer.API/api/dive"
         var diveIdentifierOut: String?
@@ -48,26 +57,16 @@ class ViewController: UIViewController {
         
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue(), completionHandler:{
             (response:NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            if let anError = error
-            {
-                self.diveLabel.text = "error calling GET on /dives/1"
-            }
+            if let anError = error {}
             else
             {
                 var jsonError: NSError?
                 if let dive = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as! NSArray!{
                     dispatch_async(dispatch_get_main_queue(),{
-                        var diveIdentifier = dive[0]["Identifier"] as! String
-                        var stringStartDate = dive[0]["DiveStart"] as! String
                         
-                        let newDive = Dive(diveIdentifier:diveIdentifier, diveStartDate: stringStartDate)
+                        let newDive = Dive(diveIdentifier: dive[0]["Identifier"] as! String, diveStartDate: dive[0]["DiveStart"] as! String)
                         
-                        self.diveLabel.text = "Identifier: \(newDive.DiveIdentifier)"
-                        self.startDateLabel.text = "DiveStart: \(newDive.DiveStartDate)"
-                        
-                        var divePoints = dive[0]["DivePoints"] as! NSArray!
-                        
-                        for divePoint in divePoints {
+                        for divePoint in dive[0]["DivePoints"] as! NSArray! {
                             println(divePoint)
                             
                             let newDivePoint = DivePoint(time: divePoint["Time"] as! NSNumber, depth: divePoint["Depth"] as! NSNumber, pressure: divePoint["Pressure"] as! NSNumber, temperature: divePoint["Temperature"] as! NSNumber)
@@ -75,22 +74,42 @@ class ViewController: UIViewController {
                             newDive.DivePoints.append(newDivePoint)
                         }
                         
-                        self.timeLabel.text = "   Time: \(newDive.DivePoints[1].Time)"
-                        self.depthLabel.text = "   Depth: \(newDive.DivePoints[1].Depth)"
-                        self.pressureLabel.text = "   Pressure: \(newDive.DivePoints[1].Pressure)"
-                        
-                        /*
-                        var divePoint = divePoints[0] as! NSDictionary
-                        var time: AnyObject! = divePoint["Time"]
-                        var depth: AnyObject! = divePoint["Depth"]
-                        var pressure: AnyObject! = divePoint["Pressure"]
-                        
-                        self.timeLabel.text = "   Time: \(time)"
-                        self.depthLabel.text = "   Depth: \(depth)"
-                        self.pressureLabel.text = "   Pressure: \(pressure)"*/
+                        //                        var legend
                     })
                 }
             }
         })
+        
+        barChart.reloadData()
+        barChart.setState(.Collapsed, animated: false)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        barChart.reloadData()
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("showChart"), userInfo: nil, repeats: false)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        hideChart()
+    }
+    
+    func hideChart(){
+        barChart.setState(.Collapsed, animated: true)
+    }
+    
+    func showChart(){
+        barChart.setState(.Expanded, animated: true)
+    }
+    
+    //MARK: JBBChartView
+    func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
+        //return UInt(chart
+        //https://youtu.be/2J-_YBXEhNU?t=17m13s
+    }
+    
 }

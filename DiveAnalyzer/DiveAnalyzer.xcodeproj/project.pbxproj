@@ -14,6 +14,17 @@
 		2B22D0301B0AF981006856F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B22D02F1B0AF981006856F0 /* Images.xcassets */; };
 		2B22D0331B0AF981006856F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B22D0311B0AF981006856F0 /* LaunchScreen.xib */; };
 		2B22D03F1B0AF981006856F0 /* DiveAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D03E1B0AF981006856F0 /* DiveAnalyzerTests.swift */; };
+		2B22D0561B0C5156006856F0 /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B22D0551B0C5156006856F0 /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B22D05C1B0C5156006856F0 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B22D0511B0C5156006856F0 /* JBChart.framework */; };
+		2B22D0651B0C5156006856F0 /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0641B0C5156006856F0 /* JBChartTests.m */; };
+		2B22D0681B0C5156006856F0 /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B22D0511B0C5156006856F0 /* JBChart.framework */; };
+		2B22D0691B0C5156006856F0 /* JBChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B22D0511B0C5156006856F0 /* JBChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2B22D0781B0C51C2006856F0 /* JBBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B22D0721B0C51C2006856F0 /* JBBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B22D0791B0C51C2006856F0 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0731B0C51C2006856F0 /* JBBarChartView.m */; };
+		2B22D07A1B0C51C2006856F0 /* JBChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B22D0741B0C51C2006856F0 /* JBChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B22D07B1B0C51C2006856F0 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0751B0C51C2006856F0 /* JBChartView.m */; };
+		2B22D07C1B0C51C2006856F0 /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B22D0761B0C51C2006856F0 /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B22D07D1B0C51C2006856F0 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0771B0C51C2006856F0 /* JBLineChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +35,42 @@
 			remoteGlobalIDString = 2B22D01F1B0AF981006856F0;
 			remoteInfo = DiveAnalyzer;
 		};
+		2B22D05D1B0C5156006856F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B22D0181B0AF981006856F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B22D0501B0C5156006856F0;
+			remoteInfo = JBChart;
+		};
+		2B22D05F1B0C5156006856F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B22D0181B0AF981006856F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B22D01F1B0AF981006856F0;
+			remoteInfo = DiveAnalyzer;
+		};
+		2B22D0661B0C5156006856F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B22D0181B0AF981006856F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B22D0501B0C5156006856F0;
+			remoteInfo = JBChart;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B22D06D1B0C5156006856F0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2B22D0691B0C5156006856F0 /* JBChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B22D0201B0AF981006856F0 /* DiveAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +84,18 @@
 		2B22D0381B0AF981006856F0 /* DiveAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiveAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B22D03D1B0AF981006856F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B22D03E1B0AF981006856F0 /* DiveAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveAnalyzerTests.swift; sourceTree = "<group>"; };
+		2B22D0511B0C5156006856F0 /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B22D0541B0C5156006856F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B22D0551B0C5156006856F0 /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
+		2B22D05B1B0C5156006856F0 /* JBChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B22D0631B0C5156006856F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B22D0641B0C5156006856F0 /* JBChartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBChartTests.m; sourceTree = "<group>"; };
+		2B22D0721B0C51C2006856F0 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		2B22D0731B0C51C2006856F0 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		2B22D0741B0C51C2006856F0 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		2B22D0751B0C51C2006856F0 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		2B22D0761B0C51C2006856F0 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		2B22D0771B0C51C2006856F0 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B22D0681B0C5156006856F0 /* JBChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +111,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B22D04D1B0C5156006856F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B22D0581B0C5156006856F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B22D05C1B0C5156006856F0 /* JBChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +137,8 @@
 			children = (
 				2B22D0221B0AF981006856F0 /* DiveAnalyzer */,
 				2B22D03B1B0AF981006856F0 /* DiveAnalyzerTests */,
+				2B22D0521B0C5156006856F0 /* JBChart */,
+				2B22D0611B0C5156006856F0 /* JBChartTests */,
 				2B22D0211B0AF981006856F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +148,8 @@
 			children = (
 				2B22D0201B0AF981006856F0 /* DiveAnalyzer.app */,
 				2B22D0381B0AF981006856F0 /* DiveAnalyzerTests.xctest */,
+				2B22D0511B0C5156006856F0 /* JBChart.framework */,
+				2B22D05B1B0C5156006856F0 /* JBChartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,7 +193,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2B22D0521B0C5156006856F0 /* JBChart */ = {
+			isa = PBXGroup;
+			children = (
+				2B22D0711B0C516C006856F0 /* Classes */,
+				2B22D0551B0C5156006856F0 /* JBChart.h */,
+				2B22D0531B0C5156006856F0 /* Supporting Files */,
+			);
+			path = JBChart;
+			sourceTree = "<group>";
+		};
+		2B22D0531B0C5156006856F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B22D0541B0C5156006856F0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B22D0611B0C5156006856F0 /* JBChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B22D0641B0C5156006856F0 /* JBChartTests.m */,
+				2B22D0621B0C5156006856F0 /* Supporting Files */,
+			);
+			path = JBChartTests;
+			sourceTree = "<group>";
+		};
+		2B22D0621B0C5156006856F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B22D0631B0C5156006856F0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B22D0711B0C516C006856F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2B22D0721B0C51C2006856F0 /* JBBarChartView.h */,
+				2B22D0731B0C51C2006856F0 /* JBBarChartView.m */,
+				2B22D0741B0C51C2006856F0 /* JBChartView.h */,
+				2B22D0751B0C51C2006856F0 /* JBChartView.m */,
+				2B22D0761B0C51C2006856F0 /* JBLineChartView.h */,
+				2B22D0771B0C51C2006856F0 /* JBLineChartView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2B22D04E1B0C5156006856F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B22D07C1B0C51C2006856F0 /* JBLineChartView.h in Headers */,
+				2B22D0781B0C51C2006856F0 /* JBBarChartView.h in Headers */,
+				2B22D07A1B0C51C2006856F0 /* JBChartView.h in Headers */,
+				2B22D0561B0C5156006856F0 /* JBChart.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2B22D01F1B0AF981006856F0 /* DiveAnalyzer */ = {
@@ -125,10 +265,12 @@
 				2B22D01C1B0AF981006856F0 /* Sources */,
 				2B22D01D1B0AF981006856F0 /* Frameworks */,
 				2B22D01E1B0AF981006856F0 /* Resources */,
+				2B22D06D1B0C5156006856F0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2B22D0671B0C5156006856F0 /* PBXTargetDependency */,
 			);
 			name = DiveAnalyzer;
 			productName = DiveAnalyzer;
@@ -153,6 +295,43 @@
 			productReference = 2B22D0381B0AF981006856F0 /* DiveAnalyzerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2B22D0501B0C5156006856F0 /* JBChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B22D06A1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChart" */;
+			buildPhases = (
+				2B22D04C1B0C5156006856F0 /* Sources */,
+				2B22D04D1B0C5156006856F0 /* Frameworks */,
+				2B22D04E1B0C5156006856F0 /* Headers */,
+				2B22D04F1B0C5156006856F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JBChart;
+			productName = JBChart;
+			productReference = 2B22D0511B0C5156006856F0 /* JBChart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2B22D05A1B0C5156006856F0 /* JBChartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B22D06E1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChartTests" */;
+			buildPhases = (
+				2B22D0571B0C5156006856F0 /* Sources */,
+				2B22D0581B0C5156006856F0 /* Frameworks */,
+				2B22D0591B0C5156006856F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B22D05E1B0C5156006856F0 /* PBXTargetDependency */,
+				2B22D0601B0C5156006856F0 /* PBXTargetDependency */,
+			);
+			name = JBChartTests;
+			productName = JBChartTests;
+			productReference = 2B22D05B1B0C5156006856F0 /* JBChartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,6 +346,14 @@
 						DevelopmentTeam = 5M7XRMWUH6;
 					};
 					2B22D0371B0AF981006856F0 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 2B22D01F1B0AF981006856F0;
+					};
+					2B22D0501B0C5156006856F0 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5M7XRMWUH6;
+					};
+					2B22D05A1B0C5156006856F0 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 2B22D01F1B0AF981006856F0;
 					};
@@ -187,6 +374,8 @@
 			targets = (
 				2B22D01F1B0AF981006856F0 /* DiveAnalyzer */,
 				2B22D0371B0AF981006856F0 /* DiveAnalyzerTests */,
+				2B22D0501B0C5156006856F0 /* JBChart */,
+				2B22D05A1B0C5156006856F0 /* JBChartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +392,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2B22D0361B0AF981006856F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B22D04F1B0C5156006856F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B22D0591B0C5156006856F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,6 +433,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B22D04C1B0C5156006856F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B22D0791B0C51C2006856F0 /* JBBarChartView.m in Sources */,
+				2B22D07D1B0C51C2006856F0 /* JBLineChartView.m in Sources */,
+				2B22D07B1B0C51C2006856F0 /* JBChartView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B22D0571B0C5156006856F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B22D0651B0C5156006856F0 /* JBChartTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -237,6 +458,21 @@
 			isa = PBXTargetDependency;
 			target = 2B22D01F1B0AF981006856F0 /* DiveAnalyzer */;
 			targetProxy = 2B22D0391B0AF981006856F0 /* PBXContainerItemProxy */;
+		};
+		2B22D05E1B0C5156006856F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B22D0501B0C5156006856F0 /* JBChart */;
+			targetProxy = 2B22D05D1B0C5156006856F0 /* PBXContainerItemProxy */;
+		};
+		2B22D0601B0C5156006856F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B22D01F1B0AF981006856F0 /* DiveAnalyzer */;
+			targetProxy = 2B22D05F1B0C5156006856F0 /* PBXContainerItemProxy */;
+		};
+		2B22D0671B0C5156006856F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B22D0501B0C5156006856F0 /* JBChart */;
+			targetProxy = 2B22D0661B0C5156006856F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,6 +635,80 @@
 			};
 			name = Release;
 		};
+		2B22D06B1B0C5156006856F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBChart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B22D06C1B0C5156006856F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JBChart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B22D06F1B0C5156006856F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiveAnalyzer.app/DiveAnalyzer";
+			};
+			name = Debug;
+		};
+		2B22D0701B0C5156006856F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiveAnalyzer.app/DiveAnalyzer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +734,22 @@
 			buildConfigurations = (
 				2B22D0461B0AF981006856F0 /* Debug */,
 				2B22D0471B0AF981006856F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2B22D06A1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B22D06B1B0C5156006856F0 /* Debug */,
+				2B22D06C1B0C5156006856F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2B22D06E1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B22D06F1B0C5156006856F0 /* Debug */,
+				2B22D0701B0C5156006856F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

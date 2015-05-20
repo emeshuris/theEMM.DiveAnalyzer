@@ -34,6 +34,20 @@
                ReferencedContainer = "container:DiveAnalyzer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B22D05A1B0C5156006856F0"
+               BuildableName = "JBChartTests.xctest"
+               BlueprintName = "JBChartTests"
+               ReferencedContainer = "container:DiveAnalyzer.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "2B22D0371B0AF981006856F0"
                BuildableName = "DiveAnalyzerTests.xctest"
                BlueprintName = "DiveAnalyzerTests"
+               ReferencedContainer = "container:DiveAnalyzer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B22D05A1B0C5156006856F0"
+               BuildableName = "JBChartTests.xctest"
+               BlueprintName = "JBChartTests"
                ReferencedContainer = "container:DiveAnalyzer.xcodeproj">
             </BuildableReference>
          </TestableReference>
