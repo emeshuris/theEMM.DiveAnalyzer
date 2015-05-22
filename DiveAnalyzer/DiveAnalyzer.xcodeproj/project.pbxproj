@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0D17DC1B0EE4280068E1CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D17DB1B0EE4280068E1CB /* Extensions.swift */; };
 		2B22D0261B0AF981006856F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0251B0AF981006856F0 /* AppDelegate.swift */; };
 		2B22D0291B0AF981006856F0 /* DiveAnalyzer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D0271B0AF981006856F0 /* DiveAnalyzer.xcdatamodeld */; };
 		2B22D02B1B0AF981006856F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22D02A1B0AF981006856F0 /* ViewController.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B0D17DB1B0EE4280068E1CB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2B22D0201B0AF981006856F0 /* DiveAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B22D0241B0AF981006856F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B22D0251B0AF981006856F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				2B22D0311B0AF981006856F0 /* LaunchScreen.xib */,
 				2B22D0271B0AF981006856F0 /* DiveAnalyzer.xcdatamodeld */,
 				2B22D0231B0AF981006856F0 /* Supporting Files */,
+				2B0D17DB1B0EE4280068E1CB /* Extensions.swift */,
 			);
 			path = DiveAnalyzer;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				2B22D02B1B0AF981006856F0 /* ViewController.swift in Sources */,
 				2B22D0261B0AF981006856F0 /* AppDelegate.swift in Sources */,
 				2B22D0291B0AF981006856F0 /* DiveAnalyzer.xcdatamodeld in Sources */,
+				2B0D17DC1B0EE4280068E1CB /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +732,7 @@
 				2B22D0441B0AF981006856F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B22D0451B0AF981006856F0 /* Build configuration list for PBXNativeTarget "DiveAnalyzerTests" */ = {
 			isa = XCConfigurationList;
@@ -736,6 +741,7 @@
 				2B22D0471B0AF981006856F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B22D06A1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChart" */ = {
 			isa = XCConfigurationList;
@@ -744,6 +750,7 @@
 				2B22D06C1B0C5156006856F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B22D06E1B0C5156006856F0 /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
 			isa = XCConfigurationList;
@@ -752,6 +759,7 @@
 				2B22D0701B0C5156006856F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
