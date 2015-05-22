@@ -5,7 +5,7 @@ import JBChart
 class Dive {
     var DiveIdentifier: String!
     var DiveStartDate: NSDate!
-    var DivePoints = Array<DivePoint>()
+    var DivePoints = [DivePoint]()
     
     init(diveIdentifier: String, diveStartDate: String) {
         DiveIdentifier = diveIdentifier
@@ -18,38 +18,52 @@ class Dive {
 
 class DivePoint {
     var Time: Int32!
-    var Depth: Float!
+    var Depth: Int32!
     var Pressure: Float!
     var Temperature: Float!
+    
     
     init(time: NSNumber, depth: NSNumber, pressure: NSNumber, temperature: NSNumber)
     {
         Time = time.intValue
-        Depth = depth.floatValue
+        Depth = 150 - depth.intValue
         Pressure = pressure.floatValue
         Temperature = temperature.floatValue
     }
 }
 
-class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
-    @IBOutlet weak var barChart: JBBarChartView!
+class ViewController: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSource {
+    @IBOutlet weak var lineChart: JBLineChartView!
+    var newDive: Dive?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        hideChart()
+    }
+    
+    func setUpUI()
+    {
         view.backgroundColor = UIColor.darkGrayColor()
-        barChart.backgroundColor = UIColor.darkGrayColor()
         
-        barChart.delegate = self
-        barChart.dataSource = self
-        barChart.minimumValue = 0
-        barChart.maximumValue = 4000
-        
-        
-        
-        
-        
-        
+        lineChart.backgroundColor = UIColor.darkGrayColor()
+        lineChart.delegate = self
+        lineChart.dataSource = self
+        lineChart.minimumValue = 0
+        lineChart.maximumValue = 150
+    }
+    
+    func getData(){
         var diveEndpoint: String = "http://edwardmeshuf842/DiveAnalyzer.API/api/dive"
         var diveIdentifierOut: String?
         
@@ -64,52 +78,96 @@ class ViewController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDa
                 if let dive = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as! NSArray!{
                     dispatch_async(dispatch_get_main_queue(),{
                         
-                        let newDive = Dive(diveIdentifier: dive[0]["Identifier"] as! String, diveStartDate: dive[0]["DiveStart"] as! String)
+                        self.newDive = Dive(diveIdentifier: dive[0]["Identifier"] as! String, diveStartDate: dive[0]["DiveStart"] as! String)
                         
                         for divePoint in dive[0]["DivePoints"] as! NSArray! {
                             println(divePoint)
                             
                             let newDivePoint = DivePoint(time: divePoint["Time"] as! NSNumber, depth: divePoint["Depth"] as! NSNumber, pressure: divePoint["Pressure"] as! NSNumber, temperature: divePoint["Temperature"] as! NSNumber)
                             
-                            newDive.DivePoints.append(newDivePoint)
+                            self.newDive!.DivePoints.append(newDivePoint)
                         }
                         
-                        //                        var legend
+                        self.drawChart()
                     })
                 }
             }
         })
         
-        barChart.reloadData()
-        barChart.setState(.Collapsed, animated: false)
+        lineChart.setState(.Collapsed, animated: false)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        barChart.reloadData()
-        
+    func drawChart(){
+        setUpUI()
+        lineChart.reloadData()
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("showChart"), userInfo: nil, repeats: false)
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        hideChart()
-    }
-    
     func hideChart(){
-        barChart.setState(.Collapsed, animated: true)
+        lineChart.setState(.Collapsed, animated: true)
     }
     
     func showChart(){
-        barChart.setState(.Expanded, animated: true)
+        lineChart.setState(.Expanded, animated: true)
     }
     
     //MARK: JBBChartView
-    func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
-        //return UInt(chart
-        //https://youtu.be/2J-_YBXEhNU?t=17m13s
+    func numberOfLinesInLineChartView(lineChartView: JBLineChartView!) -> UInt {
+        return 1
     }
     
+    func lineChartView(lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
+        if (lineIndex == 0) {
+            return UInt(newDive!.DivePoints.count)
+        }
+        
+        return 0
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
+        if (lineIndex == 0) {
+            return CGFloat(newDive!.DivePoints[Int(horizontalIndex)].Depth)
+        }
+        
+        return 0
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
+        if (lineIndex == 0) {
+            return UIColor.lightGrayColor()
+        }
+        
+        return UIColor.lightGrayColor()
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {
+        return false
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, colorForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> UIColor! {
+        return UIColor.lightGrayColor()
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, smoothLineAtLineIndex lineIndex: UInt) -> Bool {
+        if (lineIndex == 0) {
+            return true
+        }
+        
+        return true
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, didSelectLineAtIndex lineIndex: UInt, horizontalIndex: UInt) {
+        if (lineIndex == 0) {
+            let data = newDive!.DivePoints[Int(horizontalIndex)].Depth
+            let key = newDive!.DivePoints[Int(horizontalIndex)].Time
+        }
+    }
+    
+    func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
+        if (lineIndex == 1) {
+            return UIColor.whiteColor()
+        }
+        
+        return UIColor.clearColor()
+    }
 }
