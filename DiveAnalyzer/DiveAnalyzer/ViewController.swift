@@ -23,7 +23,15 @@ class DivePoint {
     var Temperature: Float!
     
     
-    init(time: NSNumber, depth: NSNumber, pressure: NSNumber, temperature: NSNumber)
+    init(time: Int32, depth: Int32, pressure: Float, temperature: Float)
+    {
+        Time = time
+        Depth = 150 - depth
+        Pressure = pressure
+        Temperature = temperature
+    }
+    
+    init(time: NSNumber, depth: NSString, pressure: NSString, temperature: NSString)
     {
         Time = time.intValue
         Depth = 150 - depth.intValue
@@ -64,7 +72,7 @@ class ViewController: UIViewController, JBLineChartViewDelegate, JBLineChartView
     }
     
     func getData(){
-        var diveEndpoint: String = "http://edwardmeshuf842/DiveAnalyzer.API/api/dive"
+        var diveEndpoint: String = "http://localhost:3000/api/dives/"
         var diveIdentifierOut: String?
         
         var urlRequest = NSURLRequest(URL: NSURL(string: diveEndpoint)!)
@@ -83,7 +91,7 @@ class ViewController: UIViewController, JBLineChartViewDelegate, JBLineChartView
                         for divePoint in dive[0]["DivePoints"] as! NSArray! {
                             println(divePoint)
                             
-                            let newDivePoint = DivePoint(time: divePoint["Time"] as! NSNumber, depth: divePoint["Depth"] as! NSNumber, pressure: divePoint["Pressure"] as! NSNumber, temperature: divePoint["Temperature"] as! NSNumber)
+                            let newDivePoint = DivePoint(time: divePoint["Time"] as! NSNumber, depth: divePoint["Depth"] as! NSString, pressure: divePoint["Pressure"] as! NSString, temperature: divePoint["Temperature"] as! NSString)
                             
                             self.newDive!.DivePoints.append(newDivePoint)
                         }
